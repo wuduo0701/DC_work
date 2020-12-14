@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./demo.css">
+  <title>Document</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
+</head>
+<body>
+  <div id="demo">
+    <img src="./img/background.png" alt="" style="width: 1000px;height: 707px;">
+    <div class="container" v-if="credentialData">
+      <div class="ceri-title">获 奖 证 书</div>
+      <div class="ceri-into">将此证书颁发给</div>
+      <div class="ceri-into-eng">THIS IS PRESENTED TO</div>
+      <div class="ceri-name">{{claim.receiver_name}}</div>
+      <div class="slogan">Slogan:</div>
+      <div class="weid">weid:</div>
+      <div class="slogan-text">{{claim.receiver_slogan}}</div>
+      <div class="weid-text">{{claim.receiver_weid}}</div>
+      <span class="info-text">在参加柏链第一届区块链开发大赛中，</span>
+      <span class="price">获得{{credentialData.claim.price}}</span>
+      <div class="guli">特发此证，以资鼓励</div>
+      <div class="signature">Signature</div>
+      <div class="creator">Creator</div>
+      <div class="signature-text">{{credentialData.proof.signature}}</div>
+      <div class="creator-text">{{credentialData.proof.creator}}</div>
+      <div class="type">Type: {{credentialData.proof.type}}</div>
+      <div class="time">{{transformTime('YYYY-mm-dd HH:MM', credentialData.issuanceDate)}} - 
+        {{transformTime('YYYY-mm-dd HH:MM', credentialData.expirationDate)}}</div>
+    </div>
+  </div>
+  <script src="./demo.js"></script>
+</body>
+</html>
