@@ -10,8 +10,8 @@
 </head>
 <body>
   <div id="demo">
-    <img src="./img/background.png" alt="" style="width: 1000px;height: 707px;">
     <div class="container" v-if="credentialData">
+      <img src="./img/background.png" alt="" style="width: 1000px;height: 707px;">
       <div class="ceri-title">获 奖 证 书</div>
       <div class="ceri-into">将此证书颁发给</div>
       <div class="ceri-into-eng">THIS IS PRESENTED TO</div>
@@ -30,8 +30,8 @@
       <div class="type">Type: {{credentialData.proof.type}}</div>
       <div class="time">{{transformTime('YYYY-mm-dd HH:MM', credentialData.issuanceDate)}} - 
         {{transformTime('YYYY-mm-dd HH:MM', credentialData.expirationDate)}}</div>
+      </div>
     </div>
-  </div>
   <script src="./demo.js"></script>
 </body>
 </html>
